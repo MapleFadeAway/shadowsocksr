@@ -50,6 +50,8 @@ def main():
 			thread = MainThread(db_transfer.MuJsonTransfer)
 		elif get_config().API_INTERFACE == 'sspanelv2':
 			thread = MainThread(db_transfer.DbTransfer)
+		elif get_config().API_INTERFACE == 'mdb':
+			thread = MainThread(db_transfer.MDbTransfer)
 		else:
 			thread = MainThread(db_transfer.Dbv3Transfer)
 		thread.start()
